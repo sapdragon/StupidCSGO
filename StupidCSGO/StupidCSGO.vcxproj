@@ -101,8 +101,12 @@
   <ItemGroup>
     <ClInclude Include="Bootloader\Bootloader.hpp" />
     <ClInclude Include="Core.hpp" />
+    <ClInclude Include="Helpers\Math\Matrixes.hpp" />
     <ClInclude Include="Helpers\Math\Vectors\Vector2.hpp" />
     <ClInclude Include="Helpers\Math\Vectors\Vector3.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Helpers\Math\Vectors\Vector4.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

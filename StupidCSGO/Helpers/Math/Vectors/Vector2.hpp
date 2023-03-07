@@ -2,58 +2,58 @@
 #include "../../../Core.hpp"
 
 /*
- Vector2 is a class that represents a vector in 2d dimension, this class implements basic geometric operations, as well as arefmetic operations with it.
+ Vector2_t is a class that represents a vector in 2d dimension, this class implements basic geometric operations, as well as arefmetic operations with it.
  @SapDragon 26.11.2022
  Refactoring: 01.03.2022
 */
 
-struct Vector2
+struct Vector2_t
 {
 	/* Fields ( x, y dots ) */
 	f32 m_flX, m_flY;
 
 	/* Basic constructors for initializing, reinitializing vectors. */
-	Vector2() { m_flX = m_flY = 0.0f; }
-	Vector2(f32 flX, f32 flY) { m_flX = flX; m_flY = flY; }
-	Vector2(const Vector2& vec) { m_flX = vec.m_flX; m_flY = vec.m_flY; }
+	Vector2_t() { m_flX = m_flY = 0.0f; }
+	Vector2_t(f32 flX, f32 flY) { m_flX = flX; m_flY = flY; }
+	Vector2_t(const Vector2_t& vec) { m_flX = vec.m_flX; m_flY = vec.m_flY; }
 
 	/* Basic arithmetic operations with vectors. */
-	Vector2 operator+(const Vector2& vecAnother) const { return Vector2(m_flX + vecAnother.m_flX, m_flY + vecAnother.m_flY); }
-	Vector2 operator-(const Vector2& vecAnother) const { return Vector2(m_flX - vecAnother.m_flX, m_flY - vecAnother.m_flY); }
-	Vector2 operator*(const Vector2& vecAnother) const { return Vector2(m_flX * vecAnother.m_flX, m_flY * vecAnother.m_flY); }
-	Vector2 operator/(const Vector2& vecAnother) const { return Vector2(m_flX / vecAnother.m_flX, m_flY / vecAnother.m_flY); }
+	Vector2_t operator+(const Vector2_t& vecAnother) const { return Vector2_t(m_flX + vecAnother.m_flX, m_flY + vecAnother.m_flY); }
+	Vector2_t operator-(const Vector2_t& vecAnother) const { return Vector2_t(m_flX - vecAnother.m_flX, m_flY - vecAnother.m_flY); }
+	Vector2_t operator*(const Vector2_t& vecAnother) const { return Vector2_t(m_flX * vecAnother.m_flX, m_flY * vecAnother.m_flY); }
+	Vector2_t operator/(const Vector2_t& vecAnother) const { return Vector2_t(m_flX / vecAnother.m_flX, m_flY / vecAnother.m_flY); }
 	
-	Vector2& operator+=(const Vector2& vecAnother) { m_flX += vecAnother.m_flX; m_flY += vecAnother.m_flY; return *this; }
-	Vector2& operator-=(const Vector2& vecAnother) { m_flX -= vecAnother.m_flX; m_flY -= vecAnother.m_flY; return *this; }
-	Vector2& operator*=(const Vector2& vecAnother) { m_flX *= vecAnother.m_flX; m_flY *= vecAnother.m_flY; return *this; }
-	Vector2& operator/=(const Vector2& vecAnother) { m_flX /= vecAnother.m_flX; m_flY /= vecAnother.m_flY; return *this; }
+	Vector2_t& operator+=(const Vector2_t& vecAnother) { m_flX += vecAnother.m_flX; m_flY += vecAnother.m_flY; return *this; }
+	Vector2_t& operator-=(const Vector2_t& vecAnother) { m_flX -= vecAnother.m_flX; m_flY -= vecAnother.m_flY; return *this; }
+	Vector2_t& operator*=(const Vector2_t& vecAnother) { m_flX *= vecAnother.m_flX; m_flY *= vecAnother.m_flY; return *this; }
+	Vector2_t& operator/=(const Vector2_t& vecAnother) { m_flX /= vecAnother.m_flX; m_flY /= vecAnother.m_flY; return *this; }
 	
 	/* Basic arithmetic operations with scalars. */
-	Vector2 operator+(f32 flScalar) const { return Vector2(m_flX + flScalar, m_flY + flScalar); }
-	Vector2 operator-(f32 flScalar) const { return Vector2(m_flX - flScalar, m_flY - flScalar); }
-	Vector2 operator*(f32 flScalar) const { return Vector2(m_flX * flScalar, m_flY * flScalar); }
-	Vector2 operator/(f32 flScalar) const { return Vector2(m_flX / flScalar, m_flY / flScalar); }
+	Vector2_t operator+(f32 flScalar) const { return Vector2_t(m_flX + flScalar, m_flY + flScalar); }
+	Vector2_t operator-(f32 flScalar) const { return Vector2_t(m_flX - flScalar, m_flY - flScalar); }
+	Vector2_t operator*(f32 flScalar) const { return Vector2_t(m_flX * flScalar, m_flY * flScalar); }
+	Vector2_t operator/(f32 flScalar) const { return Vector2_t(m_flX / flScalar, m_flY / flScalar); }
 	
-	Vector2& operator+=(f32 flScalar) { m_flX += flScalar; m_flY += flScalar; return *this; }
-	Vector2& operator-=(f32 flScalar) { m_flX -= flScalar; m_flY -= flScalar; return *this; }
-	Vector2& operator*=(f32 flScalar) { m_flX *= flScalar; m_flY *= flScalar; return *this; }
-	Vector2& operator/=(f32 flScalar) { m_flX /= flScalar; m_flY /= flScalar; return *this; }
+	Vector2_t& operator+=(f32 flScalar) { m_flX += flScalar; m_flY += flScalar; return *this; }
+	Vector2_t& operator-=(f32 flScalar) { m_flX -= flScalar; m_flY -= flScalar; return *this; }
+	Vector2_t& operator*=(f32 flScalar) { m_flX *= flScalar; m_flY *= flScalar; return *this; }
+	Vector2_t& operator/=(f32 flScalar) { m_flX /= flScalar; m_flY /= flScalar; return *this; }
 	
 	/* Basic comparison operations with vectors. */
-	bool operator==(const Vector2& vecAnother) const { return m_flX == vecAnother.m_flX && m_flY == vecAnother.m_flY; }
-	bool operator!=(const Vector2& vecAnother) const { return m_flX != vecAnother.m_flX || m_flY != vecAnother.m_flY; }
+	bool operator==(const Vector2_t& vecAnother) const { return m_flX == vecAnother.m_flX && m_flY == vecAnother.m_flY; }
+	bool operator!=(const Vector2_t& vecAnother) const { return m_flX != vecAnother.m_flX || m_flY != vecAnother.m_flY; }
 	
 	/* Another overloads */
-	Vector2& operator=(const Vector2& vecAnother) { m_flX = vecAnother.m_flX; m_flY = vecAnother.m_flY; return *this; }
-	Vector2 operator-() const { return Vector2(-m_flX, -m_flY); }
+	Vector2_t& operator=(const Vector2_t& vecAnother) { m_flX = vecAnother.m_flX; m_flY = vecAnother.m_flY; return *this; }
+	Vector2_t operator-() const { return Vector2_t(-m_flX, -m_flY); }
 
 	/* Basic geometric operations with vectors. */
-	f32 Dot(const Vector2& vecAnother) const 
+	f32 Dot(const Vector2_t& vecAnother) const 
 	{ 
 		return m_flX * vecAnother.m_flX + m_flY * vecAnother.m_flY; 
 	}
 	
-	f32 Cross(const Vector2& vecAnother) const
+	f32 Cross(const Vector2_t& vecAnother) const
 	{
 		return m_flX * vecAnother.m_flY - m_flY * vecAnother.m_flX;
 	}
@@ -68,7 +68,7 @@ struct Vector2
 		return m_flX * m_flX + m_flY * m_flY;
 	}
 
-	Vector2& Normalize()
+	Vector2_t& Normalize()
 	{
 		f32 flLength = Length();
 		if (flLength == 0.0f)
@@ -79,21 +79,21 @@ struct Vector2
 		return *this;
 	}
 
-	Vector2 Normalized() const
+	Vector2_t Normalized() const
 	{
 		f32 flLength = Length();
 		if (flLength == 0.0f)
 			return *this;
 
-		return Vector2(m_flX / flLength, m_flY / flLength);
+		return Vector2_t(m_flX / flLength, m_flY / flLength);
 	}
 
-	f32 DistTo(const Vector2& vecAnother) const
+	f32 DistTo(const Vector2_t& vecAnother) const
 	{
 		return (*this - vecAnother).Length();
 	}
 
-	f32 DistToSqr(const Vector2& vecAnother) const
+	f32 DistToSqr(const Vector2_t& vecAnother) const
 	{
 		return (*this - vecAnother).LengthSqr();
 	}

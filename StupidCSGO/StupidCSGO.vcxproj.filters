@@ -35,5 +35,11 @@
     <ClInclude Include="Helpers\Math\Vectors\Vector3.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Helpers\Math\Matrixes.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Helpers\Math\Vectors\Vector4.hpp" />
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@ StupidSDK is a simple SDK for CS:GO. It is developed according to four principle
 1. No complicated garbage. Even a stoned third grader should be able to understand the code ( #FuckSmartPointers ) 
 2. No things that take a lot of performance. Our dumb sdk should be optimized as much as possible. 
 3. No cheat features. That is, as the SDK, it does not provide any of the cheat itself, only the SDK!
-4. Based on this, it should be possible to make a P2C without a major redesign of the code.
+4. Based on this, it should be possible to make any cheat/utility without a substantial redesign of the code.
 
 Not finished.
 
